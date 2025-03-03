@@ -1,6 +1,6 @@
 // Function to toggle between dark and light modes
 body.classList.add('dark-mode');
-body.classList.add('light-mode');
+body.classList.remove('light-mode');
 function toggleMode() {
     const body = document.body;
     const modeToggle = document.getElementById('modeToggle');
