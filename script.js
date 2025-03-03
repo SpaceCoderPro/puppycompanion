@@ -6,34 +6,23 @@ function toggleMode() {
 
     // Toggle the class based on the current mode
     if (isDarkMode) {
-        body.classList.remove('dark-mode');
-        body.classList.add('light-mode');
-        modeToggle.innerHTML = '🌙'; // Switch to moon emoji for light mode
-        saveModePreference('light');
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        modeToggle.innerHTML = '☀️'; // Switch to sun emoji for dark mode
+        
     } else {
         body.classList.remove('light-mode');
         body.classList.add('dark-mode');
         modeToggle.innerHTML = '☀️'; // Switch to sun emoji for dark mode
-        saveModePreference('dark');
+        
     }
 }
 
 // Function to save user's mode preference to local storage
-function saveModePreference(mode) {
-    localStorage.setItem('modePreference', mode);
-}
 
-// Function to retrieve user's mode preference from local storage on page load
-function retrieveModePreference() {
-    const savedMode = localStorage.getItem('modePreference');
-    if (savedMode) {
-        document.body.classList.add(savedMode + '-mode');
-        document.getElementById('modeToggle').innerHTML = savedMode === 'dark' ? '☀️' : '🌙';
-    }
-}
 
 // Event listener for page load to retrieve and apply user's mode preference
-window.addEventListener('DOMContentLoaded', retrieveModePreference);
+
 function init() { 
 
   const elements = {
